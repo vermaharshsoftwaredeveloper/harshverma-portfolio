@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
+// import './styles.css';
+import './App.css';
 
 
 function App() {

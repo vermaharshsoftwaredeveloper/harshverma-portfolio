@@ -1,17 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <h2 className="logo">Harsh Verma</h2>
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/About">About</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/resume">Resume</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+      
+      <div className="hamburger" onClick={toggleMenu}>
+        &#9776;
+      </div>
+
+      <ul className={isMobileMenuOpen ? "nav-links mobile" : "nav-links"}>
+        <li><NavLink to="/" onClick={closeMenu}>Home</NavLink></li>
+        <li><NavLink to="/About" onClick={closeMenu}>About</NavLink></li>
+        <li><NavLink to="/projects" onClick={closeMenu}>Projects</NavLink></li>
+        <li><NavLink to="/resume" onClick={closeMenu}>Resume</NavLink></li>
+        <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
       </ul>
     </nav>
   );

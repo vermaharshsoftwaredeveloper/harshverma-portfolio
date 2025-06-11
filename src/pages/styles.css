@@ -1,0 +1,29 @@
+/* styles.css */
+
+@media (max-width: 768px) {
+  img, iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  h1, h2 {
+    font-size: 24px !important;
+  }
+
+  p, li {
+    font-size: 16px !important;
+  }
+
+  .button, a, input, textarea, button {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-wrapper {
+    padding: 1rem !important;
+  }
+}

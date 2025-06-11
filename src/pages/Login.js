@@ -1,6 +1,7 @@
 // src/pages/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./styles.css";
 
 const Login = () => {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -18,9 +19,9 @@ const Login = () => {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="login-container">
       <h2>🔐 Admin Login</h2>
-      <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", maxWidth: "300px" }}>
+      <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
           placeholder="Username"

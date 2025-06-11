@@ -1,3 +1,4 @@
+/* Basic styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -5,11 +6,15 @@
   padding: 16px 32px;
   background-color: #222;
   color: white;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -23,8 +28,44 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links li a.active {
+  color: #00bcd4 !important;
 }
 
 .nav-links li a:hover {
   color: #00bcd4;
+}
+
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: #222;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.mobile {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
