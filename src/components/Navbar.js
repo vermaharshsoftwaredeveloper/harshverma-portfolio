@@ -14,8 +14,8 @@ function Navbar() {
   };
 
   return (
-    <p>*********************************This site is in under construction!!!</p>
     <nav className="navbar">
+      <p>*********************************This site is in under construction!!!</p>
       <h2 className="logo">Harsh Verma</h2>
       
       <div className="hamburger" onClick={toggleMenu}>
